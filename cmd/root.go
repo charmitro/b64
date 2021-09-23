@@ -22,14 +22,14 @@ var rootCmd = &cobra.Command{
 		if encode {
 			str := base64.StdEncoding.EncodeToString([]byte(args[0]))
 
-			fmt.Print(str)
+			fmt.Println(str)
 		} else if decode {
 			str, err := base64.StdEncoding.DecodeString(args[0])
 			if err != nil {
 				log.Fatal(err)
 			}
 
-			fmt.Print(string(str))
+			fmt.Println(string(str))
 		} else {
 			fmt.Printf("%s\n\n", cmd.Short)
 			fmt.Print(cmd.UsageString())
